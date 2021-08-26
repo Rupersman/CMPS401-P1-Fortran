@@ -1,11 +1,11 @@
       PROGRAM P1
       
 C     Define variables
-      LOGICAL :: continue = .TRUE.
+      LOGICAL :: continue_the_loop = .TRUE.
       INTEGER :: selection
       
 C     While continue == true, show the menu and take input
-      DO WHILE (continue .eqv. .TRUE.)
+      DO WHILE (continue_the_loop .eqv. .TRUE.)
         write (*,*) 'Enter a conversion option (1-6 or 0 to exit):'
 
 C       DELETE ME LATER
@@ -13,8 +13,7 @@ C       DELETE ME LATER
 
 C       Exit condition
         IF (selection == 0) THEN
-            continue = .FALSE.
+            continue_the_loop = .FALSE.
         END IF
       END DO
-
       END
