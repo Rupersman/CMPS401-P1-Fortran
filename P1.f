@@ -11,7 +11,7 @@ C     While continue_the_loop == true, show the menu and take input
         PRINT *, '--------------------------'
         PRINT *, '(1) Pounds to Kilograms'
         PRINT *, '(2) Kilograms to Pounds'
-        PRINT *, '(3) Feet to meters'
+        PRINT *, '(3) Feet to Meters'
         PRINT *, '(4) Meters to feet'
         PRINT *, '(5) Fahrenheit to Celsius'
         PRINT *, '(6) Celsius to Fahrenheit'
@@ -41,6 +41,46 @@ C       Kilograms to Pounds
             PRINT *, 'Pounds:'
             PRINT '(f8.3)', number_to_convert
         END IF
+
+C       Feet to Meters
+        IF (selection == 3) THEN
+            PRINT *, 'Feet:'
+            READ *, number_to_convert
+
+            number_to_convert = number_to_convert * 0.3048
+            PRINT *, 'Meters:'
+            PRINT '(f8.3)', number_to_convert
+        END IF
+
+C       Meters to Feet
+        IF (selection == 4) THEN
+            PRINT *, 'Meters:'
+            READ *, number_to_convert
+
+            number_to_convert = number_to_convert / 0.3048
+            PRINT *, 'Feet:'
+            PRINT '(f8.3)', number_to_convert
+        END IF
+
+C       Fahrenheit to Celsius
+        IF (selection == 5) THEN
+            PRINT *, 'Fahrenheit:'
+            READ *, number_to_convert
+
+            number_to_convert = (number_to_convert - 32) / 1.8
+            PRINT *, 'Celsius:'
+            PRINT '(f8.3)', number_to_convert
+        END IF
+
+C       Celsius to Fahrenheit
+        IF (selection == 6) THEN
+            PRINT *, 'Celsius:'
+            READ *, number_to_convert
+
+            number_to_convert = 1.8 * number_to_convert + 32
+            PRINT *, 'Fahrenheit:'
+            PRINT '(f8.3)', number_to_convert
+        END IF        
 
 C       Exit condition
         IF (selection == 0) THEN
